@@ -1,0 +1,3 @@
+public Map<String, String> pairs(String[] strings) {
+  return (new HashSet<String>(Arrays.asList(strings).stream().map(n -> n.substring(0, 1) + n.substring(n.length() - 1)).collect(Collectors.toList()))).stream().filter(n -> (new HashSet<String>(Arrays.asList(strings).stream().map(x -> x.substring(0, 1) + x.substring(x.length() - 1)).collect(Collectors.toList()))).stream().map(x -> x.substring(0, 1)).collect(Collectors.toList()).indexOf(n.substring(0, 1)) == (new ArrayList<String>((new HashSet<String>(Arrays.asList(strings).stream().map(x -> x.substring(0, 1) + x.substring(x.length() - 1)).collect(Collectors.toList()))))).indexOf(n)).collect(Collectors.toSet()).stream().collect(Collectors.toMap(n -> n.substring(0, 1), n -> n.substring(1)));
+}
