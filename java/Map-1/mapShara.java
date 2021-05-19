@@ -1,0 +1,3 @@
+public Map<String, String> mapShare(Map<String, String> map) {
+  return map.containsKey("b") ? map.entrySet().stream().filter(n -> !n.getKey().equals("c")).collect(Collectors.toMap(n -> n.getKey(), n -> n.getKey().equals("b") && map.containsKey("a") ? map.get("a") : n.getValue())) : java.util.stream.Stream.concat(java.util.stream.Stream.of(new String[][]{{"b", map.get("a")}}).collect(Collectors.toMap(n -> n[0], n -> n[1])).entrySet().stream(), map.entrySet().stream().filter(n -> !n.getKey().equals("c")).collect(Collectors.toMap(n -> n.getKey(), n -> n.getKey().equals("b") && map.containsKey("a") ? map.get("a") : n.getValue())).entrySet().stream()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+}
