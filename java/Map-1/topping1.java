@@ -1,0 +1,3 @@
+public Map<String, String> topping1(Map<String, String> map) {
+  return map.containsKey("bread") ? map.entrySet().stream().collect(Collectors.toMap(n -> n.getKey(), n -> n.getKey().equals("ice cream") ? "cherry" : n.getKey().equals("bread") ? "butter" : n.getValue())) : java.util.stream.Stream.concat(java.util.stream.Stream.of(new String[][]{{"bread", "butter"}}).collect(Collectors.toMap(n -> n[0], n -> n[1])).entrySet().stream(), map.entrySet().stream().collect(Collectors.toMap(n -> n.getKey(), n -> n.getKey().equals("ice cream") ? "cherry" : n.getValue())).entrySet().stream()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+}
