@@ -1,0 +1,3 @@
+public Map<String, String> mapAB3(Map<String, String> map) {
+  return map.containsKey("a") && !map.containsKey("b") ? java.util.stream.Stream.concat(java.util.stream.Stream.of(new String[][]{{"b", map.get("a")}}).collect(Collectors.toMap(n -> n[0], n -> n[1])).entrySet().stream(), map.entrySet().stream()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)) : map.containsKey("b") && !map.containsKey("a") ? java.util.stream.Stream.concat(java.util.stream.Stream.of(new String[][]{{"a", map.get("b")}}).collect(Collectors.toMap(n -> n[0], n -> n[1])).entrySet().stream(), map.entrySet().stream()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)) : map;
+}
