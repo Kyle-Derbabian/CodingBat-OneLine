@@ -1,0 +1,3 @@
+public int[] evenOdd(int[] nums) {
+  return nums.length == 0 ? new int[0] : nums[0] % 2 == 1 ? java.util.stream.Stream.concat(Arrays.stream(evenOdd(Arrays.copyOfRange(nums, 1, nums.length))).boxed().collect(Collectors.toList()).stream(), Arrays.asList(new Integer[] {nums[0]}).stream()).collect(Collectors.toList()).stream().mapToInt(i -> i).toArray() : java.util.stream.Stream.concat(Arrays.asList(new Integer[] {nums[0]}).stream(), Arrays.stream(evenOdd(Arrays.copyOfRange(nums, 1, nums.length))).boxed().collect(Collectors.toList()).stream()).collect(Collectors.toList()).stream().mapToInt(i -> i).toArray();
+}
