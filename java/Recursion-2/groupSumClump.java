@@ -1,13 +1,3 @@
 public boolean groupSumClump(int start, int[] nums, int target) {
-  if (start >= nums.length) {
-    return target == 0;
-  } else {
-    if (start < nums.length - 1 && nums[start] == nums[start + 1]) {
-      int lastIndex = start;
-      while (lastIndex < nums.length && nums[++lastIndex] == nums[start]) {}
-      return groupSumClump(lastIndex, nums, target - nums[start] * (lastIndex - start)) || groupSumClump(lastIndex, nums, target);
-    } else {
-      return groupSumClump(start + 1, nums, target - nums[start]) || groupSumClump(start + 1, nums, target);
-    }
-  }
+  return nums.length == 0 ? target == 0 : new Scanner(Arrays.stream(nums).boxed().collect(Collectors.toList()).toString().replace(",", "").replace("[", "").replace("]", "").replace(" ", "_").trim() + "_").useDelimiter("[" + String.valueOf(nums[0]) + "_]*").hasNext() ? groupSumClump(0, Arrays.copyOfRange(nums, Arrays.stream(nums).boxed().collect(Collectors.toList()).indexOf(Integer.parseInt(String.valueOf(new Scanner(Arrays.stream(nums).boxed().collect(Collectors.toList()).toString().replace(",", "").replace("[", "").replace("]", "").replace(" ", "_").trim() + "_").useDelimiter("[" + String.valueOf(nums[0]) + "_]*").next()))), nums.length), target) || groupSumClump(0, Arrays.copyOfRange(nums, Arrays.stream(nums).boxed().collect(Collectors.toList()).indexOf(Integer.parseInt(String.valueOf(new Scanner(Arrays.stream(nums).boxed().collect(Collectors.toList()).toString().replace(",", "").replace("[", "").replace("]", "").replace(" ", "_").trim() + "_").useDelimiter("[" + String.valueOf(nums[0]) + "_]*").next()))), nums.length), target - nums[0] * Arrays.stream(nums).boxed().collect(Collectors.toList()).indexOf(Integer.parseInt(String.valueOf(new Scanner(Arrays.stream(nums).boxed().collect(Collectors.toList()).toString().replace(",", "").replace("[", "").replace("]", "").replace(" ", "_").trim() + "_").useDelimiter("[" + String.valueOf(nums[0]) + "_]*").next())))) : nums[0] * nums.length == target || target == 0;
 }
