@@ -1,0 +1,1 @@
+sum67 = lambda nums : sum([x for index, x in enumerate(nums) if (((nums[(index - nums[index : : -1].index(6)) : ].index(7) + (index - nums[index : : -1].index(6))) < index) if (6 in nums[ : index + 1]) else True)])
