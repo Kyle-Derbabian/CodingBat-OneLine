@@ -1,0 +1,1 @@
+xyz_there = lambda str : "xyz" in str and (str.find("xyz") - 1 != str.find(".") or str.count("xyz") > str.count("."))
