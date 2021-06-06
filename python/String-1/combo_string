@@ -1,0 +1,1 @@
+combo_string = lambda a, b : a + b + a if len(a) < len(b) else b + a + b
