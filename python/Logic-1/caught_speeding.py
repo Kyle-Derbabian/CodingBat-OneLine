@@ -1,0 +1,1 @@
+caught_speeding = lambda speed, is_birthday : 0 if not is_birthday and speed <= 60 or is_birthday and speed <= 65 else 1 if not is_birthday and speed >= 61 and speed <= 80 or is_birthday and speed >= 61 and speed <= 85 else 2
